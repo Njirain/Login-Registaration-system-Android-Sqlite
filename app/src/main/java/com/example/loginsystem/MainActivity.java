@@ -1,9 +1,12 @@
 package com.example.loginsystem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
   public void Login(){
-          editTextuser = (EditText) findViewById(R.id.editpass);
-          editTextpass = (EditText) findViewById(R.id.editpass);
-          textView = (TextView)findViewById(R.id.confirm);
+          editTextuser =  findViewById(R.id.edituser);
+          editTextpass =  findViewById(R.id.editpass);
+          textView = findViewById(R.id.confirm);
           String username = editTextuser.getText().toString();
           String password = editTextpass.getText().toString();
           if(username.isEmpty()&&password.isEmpty()){
@@ -53,4 +56,21 @@ public class MainActivity extends AppCompatActivity {
    startActivity(new Intent(MainActivity.this,SignUp.class));
   }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected( MenuItem item) {
+        // demo on one item
+        // item.getItemId(); returns int value so I pass direct
+        switch (item.getItemId()){
+            case R.id.item1:
+                Toast.makeText(getApplicationContext(),"Item1 selected",Toast.LENGTH_LONG).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
