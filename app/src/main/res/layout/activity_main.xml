@@ -76,13 +76,14 @@
         android:layout_below="@+id/second"
         android:layout_marginTop="40sp"
         android:orientation="horizontal">
-   <Button
-       android:id="@+id/btnlogin"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="LOGIN"
-       android:layout_marginLeft="160sp"
-       />
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160sp"
+            android:text="LOGIN"
+            />
 
         <Button
             android:id="@+id/btnsignup"
